@@ -2,10 +2,13 @@ import { Scene } from 'phaser';
 
 export class Game extends Scene {
     stars: Phaser.Physics.Arcade.Group;
+    bombs: Phaser.Physics.Arcade.Group;
 
     platforms: Phaser.Physics.Arcade.StaticGroup;
     player: Phaser.Types.Physics.Arcade.SpriteWithDynamicBody;
     cursors: any;
+    score = 0;
+    scoreText: any;
     constructor() {
         super('Game');
     }
@@ -82,16 +85,28 @@ export class Game extends Scene {
         this.stars.children.iterate((star: any) => {
             star.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
             return null;
+            player.setTint(13728);
         })
-
-        this.physics.add.collider(this.stars, this.platforms);
-
+        this.bombs = this.physics.add.group()
+        this.player = this.physics.add.sprite(100, 450, 'dude');
         this.platforms.create(600, 400, 'ground');
         this.platforms.create(50, 250, 'ground');
         this.platforms.create(750, 220, 'ground');
-        this.player = this.physics.add.sprite(100, 450, 'dude');
+        this.physics.add.collider(this.stars, this.platforms);
+        this.physics.add.collider(this.bombs, this.platforms)
+        this.physics.add.collider(this.player, this.bombs, (player: any, bomb: any)=>{
+            this.physics.pause();
+            player.setTint(183728);
+            this.gameOver = true;
+        }, undefined, this)
         this.physics.add.collider(this.player, this.platforms);
-
+        this.physics.add.overlap(this.player, this.stars, (player: any, star: any) => {
+            star.disableBody(true, true);
+            this.score += 1;
+            player.setTint(983728);
+            this.scoreText.setText('srcore: ' + this.score + '0');
+        }, undefined, this);
+        this.scoreText = this.add.text(20, 20, 'scoR 0:', { fontSize: '70px', fill: '#122' })
         this.player.setBounce(0.2);
         this.player.setCollideWorldBounds(true);
     }
