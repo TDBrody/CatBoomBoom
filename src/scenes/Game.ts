@@ -17,17 +17,17 @@ export class Game extends Scene {
     create() {
         this.add.image(856, 460, 'background').setScale(1.1);
         const character = this.add.sprite(856, 500, 'cat').setScale(0.75);
-
+        character.setInteractive();
         // Create the animation
         this.anims.create({
             key: 'click',
             frames: this.anims.generateFrameNumbers('cat', { start: 0, end: 9 }),
-            frameRate: 10,
+            frameRate: 17,
             repeat: 0 // Play the animation once
         });
 
-        this.input.on('pointerdown', () => {
-            character.play('click');
+        this.input.on('gameobjectup', (pointer, gameObject) => {
+            gameObject.play('click');
         });
     }
 
