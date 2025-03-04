@@ -4,6 +4,7 @@ export class Game extends Scene {
     catClickable: Phaser.Physics.Arcade.StaticGroup;
     score = 0;
     scoreText: any;
+    gameOverImage: Phaser.GameObjects.Image;
 
     constructor() {
         super('Game');
@@ -12,6 +13,7 @@ export class Game extends Scene {
     preload() {
         // Ensure the file paths are correct
         this.load.image('background', 'assets/meowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeow.jpg');
+        this.load.image('gameOver', 'assets/meo.jpg'); // Preload the game over image
         this.load.spritesheet('cat', 'assets/cat.png', { frameWidth: 1080, frameHeight: 1080 });
         this.load.spritesheet('catboom', 'assets/catblowupohnocaboommeowmeow.png', { frameWidth: 3240, frameHeight: 3240 });
         this.load.audio('meow', 'assets/meow.mp3'); // Preload the audio file
@@ -28,7 +30,7 @@ export class Game extends Scene {
         this.anims.create({
             key: 'click',
             frames: this.anims.generateFrameNumbers('cat', { start: 0, end: 9 }),
-            frameRate: 30, // Adjusted frame rate
+            frameRate: 35, // Adjusted frame rate
             repeat: 0 // Play the animation once
         });
 
@@ -40,39 +42,22 @@ export class Game extends Scene {
         });
 
         const meowSound = this.sound.add('meow'); // Add the audio to the scene
-        this.load.audio('meowboomboommeowboomy', 'assets/kaboomymeow.mp3'); // Preload the audio file
         const boooom = this.sound.add('meowboomboommeowboomy'); // Add the audio to the scene
 
+        // Add the game over image and make it invisible initially
+        this.gameOverImage = this.add.image(856, 460, 'gameOver').setScale(1.1);
+        this.gameOverImage.setVisible(false);
+
         this.input.on('gameobjectup', (pointer, gameObject) => {
-            // 50% chance to play either animationgameObject.setScale(0.59);
             if (Math.random() < 0.9) {
                 gameObject.play('click');
             } else {
-                
                 gameObject.play('boom');
-                 boooom.play();
-                 this.anims.create({
-                  
-            key: 'boom',
-            frames: this.anims.generateFrameNumbers('catboom', { start: 0, end: 9 }),
-            frameRate: 30, // Adjusted frame rate
-            repeat: 0 // Play the animation once
-        });
-
-        const meowSound = this.sound.add('meow'); // Add the audio to the scene
-
-        this.input.on('gameobjectup', (pointer, gameObject) => {
-            // 50% chance to play either animation
-            if (Math.random() < 0.5) {
-                gameObject.play('click');
-            } else {
-                gameObject.play('boom');
-                gameObject.setScale(0.7);
-            }
-            meowSound.play(); // Play the audio when the animation is triggered
-            this.score += 1;
-            this.scoreText.setText('Score: ' + this.score);
-        });
+                boooom.play();
+                gameObject.on('animationcomplete', () => {
+                    this.gameOverImage.setVisible(true); // Make the game over image visible
+                    this.input.enabled = false; // Disable further input
+                });
             }
             meowSound.play(); // Play the audio when the animation is triggered
             this.score += 1;
