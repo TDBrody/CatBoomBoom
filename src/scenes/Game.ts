@@ -4,6 +4,7 @@ export class Game extends Scene {
     catClickable: Phaser.Physics.Arcade.StaticGroup;
     score = 0;
     scoreText: any;
+    meowmeowmeowcatmeow: any;
     gameOverImage: Phaser.GameObjects.Image;
 
     constructor() {
@@ -25,7 +26,13 @@ export class Game extends Scene {
         const character = this.add.sprite(856, 500, 'cat').setScale(0.75);
         character.setInteractive();
         character.setOrigin(0.5, 0.5); // Set the origin to the center
-        
+        let Catnum = 0.8333;
+        console.log (Catnum);
+        function convertToInversePercentage(decimal: number): string {
+            return ((1 - decimal) * 100).toFixed(2) + '%';
+        }
+        let Catsilly = convertToInversePercentage(Catnum);
+        console.log(Catsilly);
         // Create the animations
         this.anims.create({
             key: 'click',
@@ -47,13 +54,18 @@ export class Game extends Scene {
         // Add the game over image and make it invisible initially
         this.gameOverImage = this.add.image(856, 460, 'gameOver').setScale(1.1);
         this.gameOverImage.setVisible(false);
-
         this.input.on('gameobjectup', (pointer, gameObject) => {
-            if (Math.random() < 0.9) {
+            if (Math.random() < Catnum) {
                 gameObject.play('click');
+                Catnum -= 0.1667;
+                console.log(Catnum)
+                let Catsilly = convertToInversePercentage(Catnum);
+                console.log(Catsilly);
+                this.meowmeowmeowcatmeow.setText('Boom Boom Chance: ' + Catsilly);
             } else {
                 gameObject.play('boom');
                 boooom.play();
+                this.score += -100000;
                 gameObject.on('animationcomplete', () => {
                     this.gameOverImage.setVisible(true); // Make the game over image visible
                     this.input.enabled = false; // Disable further input
@@ -65,6 +77,8 @@ export class Game extends Scene {
         });
 
         this.scoreText = this.add.text(16, 16, 'Score: 0', { fontSize: '48px', fill: '#000' });
+        this.meowmeowmeowcatmeow = this.add.text(14, 50, 'Boom Boom Chance: 16.67%', { fontSize: '48px', fill: '#000' });
+        
     }
 
     update() {
