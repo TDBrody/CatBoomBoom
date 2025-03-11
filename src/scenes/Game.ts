@@ -116,7 +116,7 @@ export class Game extends Scene {
               } else if (happiCat > 91 && happiCat <= 98) {
                 this.catThought = "am so happy";
               } else if (happiCat > 98 && happiCat <= 105) {
-                  this.catThought = "am the most not deressed";
+                  this.catThought = "am the most not depressed";
               } else if (happiCat > 105 && happiCat <= 112) {
                 this.catThought = "yippee";
               } else if (happiCat > 112 && happiCat <= 119) {
