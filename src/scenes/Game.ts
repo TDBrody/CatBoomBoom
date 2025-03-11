@@ -18,12 +18,6 @@ export class Game extends Scene {
 
     preload() {
         // Ensure the file paths are correct
-        this.load.image('background', 'assets/meowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeow.jpg');
-        this.load.image('gameOver', 'assets/meo.jpg'); // Preload the game over image
-        this.load.spritesheet('cat', 'assets/cat.png', { frameWidth: 1080, frameHeight: 1080 });
-        this.load.spritesheet('catboom', 'assets/catblowupohnocaboommeowmeow.png', { frameWidth: 3240, frameHeight: 3240 });
-        this.load.audio('meow', 'assets/meow.mp3'); // Preload the audio file
-        this.load.audio('meowboomboommeowboomy', 'assets/kaboomymeow.mp3'); // Preload the audio file
     }
 
     create() {

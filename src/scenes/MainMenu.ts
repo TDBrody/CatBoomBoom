@@ -17,6 +17,13 @@ export class MainMenu extends Scene {
     create() {
         console.log('Creating scene...');
         this.background = this.add.image(950, 520, 'waffle').setScale(1.06);
+        this.add.text(80,345,"CLICK ME TO PLAY :)", {
+            fontSize: '50px',
+            color: '#ffffff', // White fill
+            fontStyle: 'bold', // Bold font
+            stroke: '#000000', // Black outline
+            strokeThickness: 6 // Thickness of the outline
+        })
 
         if (!this.background) {
             console.error('Failed to load background image');

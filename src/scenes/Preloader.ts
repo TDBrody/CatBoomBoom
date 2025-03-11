@@ -10,13 +10,13 @@ export class Preloader extends Scene
     init ()
     {
         //  We loaded this image in our Boot Scene, so we can display it here
-        this.add.image(512, 384, 'background');
+        this.add.image(950,520, 'waffle').setScale(1.06);
 
         //  A simple progress bar. This is the outline of the bar.
         this.add.rectangle(512, 384, 468, 32).setStrokeStyle(1, 0xffffff);
 
         //  This is the progress bar itself. It will increase in size from the left based on the % of progress.
-        const bar = this.add.rectangle(512-230, 384, 4, 28, 0xffffff);
+        const bar = this.add.rectangle(512-230, 384, 4, 28, 0x00ffaa);
 
         //  Use the 'progress' event emitted by the LoaderPlugin to update the loading bar
         this.load.on('progress', (progress: number) => {
@@ -31,7 +31,12 @@ export class Preloader extends Scene
     {
         //  Load the assets for the game - Replace with your own assets
         this.load.setPath('assets');
-        this.load.image('waffle', 'waffle.png');
+        this.load.image('gameOver', 'meo.jpg'); // Preload the game over image
+        this.load.image('background', 'meowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeow.jpg');
+        this.load.spritesheet('cat', 'cat.png', { frameWidth: 1080, frameHeight: 1080 });
+        this.load.spritesheet('catboom', 'catblowupohnocaboommeowmeow.png', { frameWidth: 3240, frameHeight: 3240 });
+        this.load.audio('meow', 'meow.mp3'); // Preload the audio file
+        this.load.audio('meowboomboommeowboomy', 'kaboomymeow.mp3'); // Preload the audio file
     }
 
     create ()
