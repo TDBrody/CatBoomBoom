@@ -12,6 +12,11 @@ export class Game extends Scene {
     catThink: any;
     catThought: any;
     callback: any;
+    catNum: any;
+    gameObject: any; 
+    boooom: any; 
+    meowSound: any;
+    convertToInversePercentage: any;
 
     constructor() {
         super('Game');
@@ -183,25 +188,25 @@ export class Game extends Scene {
     }
 
     computerTurn() {
-      if (Math.random() < catNum) {
-        gameObject.play('click');
-        catNum -= 0.1667;
-        console.log(catNum);
-        let catsilly = convertToInversePercentage(catNum);
+      if (Math.random() < this.catNum) {
+        this.gameObject.play('click');
+        this.catNum -= 0.1667;
+        console.log(this.catNum);
+        let catsilly = this.convertToInversePercentage(this.catNum);
         console.log(catsilly);
-        happiCat += (catNum * 10) + 1; //Cat hug gratitude
+        this.happiCat += (this.catNum * 10) + 1; //Cat hug gratitude
         this.meowmeowmeowcatmeow.setText('Boom Boom Chance: ' + catsilly);
     } else {
-        gameObject.play('boom');
-        boooom.play();
+      this.gameObject.play('boom');
+      this.boooom.play();
         this.score -= 100000;
-        gameObject.on('animationcomplete', () => {
+        this.gameObject.on('animationcomplete', () => {
            
             this.gameOverImage.setVisible(true); // Make the game over image visible
             this.input.enabled = false; // Disable further input
         });
     }
-    meowSound.play(); // Play the audio when the animation is triggered
+    this.meowSound.play(); // Play the audio when the animation is triggered
     this.score += 1;
     this.scoreText.setText('Score: ' + this.score);
     }
