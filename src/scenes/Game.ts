@@ -197,10 +197,10 @@ export class Game extends Scene {
         this.happiCat += (this.catNum * 10) + 1; //Cat hug gratitude
         this.meowmeowmeowcatmeow.setText('Boom Boom Chance: ' + catsilly);
     } else {
-      this.gameObject.play('boom');
-      this.boooom.play();
+      this.gameObject.play('boom'); //issue during computerTurn
+      this.boooom.play(); //issue during computerTurn
         this.score -= 100000;
-        this.gameObject.on('animationcomplete', () => {
+        this.gameObject.on('animationcomplete', () => { //issue during computerTurn
            
             this.gameOverImage.setVisible(true); // Make the game over image visible
             this.input.enabled = false; // Disable further input
