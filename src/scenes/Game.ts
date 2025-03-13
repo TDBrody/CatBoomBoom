@@ -42,15 +42,15 @@ export class Game extends Scene {
         let happiCat = 100;
         setInterval(() => { 
             happiCat -= catNum / 100;
-            console.log(`HappiCat: ${happiCat.toFixed(2)}`);
+            //console.log(`HappiCat: ${happiCat.toFixed(2)}`);
             this.catmood.setText('Cat Happiness: ' + happiCat);
           }, 10);
-        console.log (catNum);
+        //console.log (catNum);
         function convertToInversePercentage(decimal: number): string {
             return ((1 - decimal) * 100).toFixed(2) + '%';
         }
         let catsilly = convertToInversePercentage(catNum);
-        console.log(catsilly);
+        //console.log(catsilly);
         // Create the animations
         this.anims.create({
             key: 'click',
@@ -153,9 +153,9 @@ export class Game extends Scene {
             if (Math.random() < catNum) {
                 gameObject.play('click');
                 catNum -= 0.1667;
-                console.log(catNum);
+                //console.log(catNum);
                 let catsilly = convertToInversePercentage(catNum);
-                console.log(catsilly);
+                //console.log(catsilly);
                 happiCat += (catNum * 10) + 1; //Cat hug gratitude
                 this.meowmeowmeowcatmeow.setText('Boom Boom Chance: ' + catsilly);
             } else {
@@ -191,9 +191,9 @@ export class Game extends Scene {
       if (Math.random() < this.catNum) {
         this.gameObject.play('click');
         this.catNum -= 0.1667;
-        console.log(this.catNum);
+        //console.log(this.catNum);
         let catsilly = this.convertToInversePercentage(this.catNum);
-        console.log(catsilly);
+        //console.log(catsilly);
         this.happiCat += (this.catNum * 10) + 1; //Cat hug gratitude
         this.meowmeowmeowcatmeow.setText('Boom Boom Chance: ' + catsilly);
     } else {
