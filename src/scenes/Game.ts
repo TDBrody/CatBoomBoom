@@ -180,14 +180,19 @@ export class Game extends Scene {
     this.catmood = this.add.text(14, 90, 'Cat Happiness: 100', { fontSize: '48px', color: '#000' });
 
     this.input.on('gameobjectup', (_pointer: Phaser.Input.Pointer, gameObject: Phaser.GameObjects.Sprite) => {
-    this.time.addEvent({
-      delay: 1500, // ms
-      callback: this.computerTurn.bind(this),
-      //args: [],
-      callbackScope: this,
-      loop: true,
+      // Add the event
+      const event = this.time.addEvent({
+          delay: 1500, // ms
+          callback: () => {
+              this.computerTurn();
+              // Stop the event after it has executed once
+              event.remove(); // This removes the event after the first execution
+          },
+          callbackScope: this,
+          loop: false, // Ensures the event only happens once
       });
-    });
+  });
+  
   }
 
   computerTurn() {
