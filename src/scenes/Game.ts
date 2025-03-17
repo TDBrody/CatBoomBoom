@@ -179,6 +179,7 @@ export class Game extends Scene {
     this.meowmeowmeowcatmeow = this.add.text(14, 50, 'Boom Boom Chance: 16.67%', { fontSize: '48px', color: '#000' });
     this.catmood = this.add.text(14, 90, 'Cat Happiness: 100', { fontSize: '48px', color: '#000' });
 
+    this.input.keyboard.on('keydown-E', () => {
     this.input.on('gameobjectup', (_pointer: Phaser.Input.Pointer, gameObject: Phaser.GameObjects.Sprite) => {
       // Add the event
       const event = this.time.addEvent({
@@ -191,6 +192,7 @@ export class Game extends Scene {
           callbackScope: this,
           loop: false, // Ensures the event only happens once
       });
+    });
   });
   
   }
