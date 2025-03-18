@@ -215,7 +215,47 @@ export class Game extends Scene {
         });
       }
     });
+    
+    // Add the walterwhite image and make it invisible initially
+    this.walterWhiteImage = this.add.image(950, 460, 'walterwhite').setScale(2);
+    this.walterWhiteImage.setVisible(false);
+    this.gokuu = this.add.image(958, 460, 'goku').setScale(1.592);
+    this.gokuu.setVisible(false);
+    this.hahacat = this.add.image(958, 460, 'hahacat').setScale(2.6);
+    this.hahacat.setVisible(false);
+    this.good = this.add.image(958, 460, 'good').setScale(2.6);
+    this.good.setVisible(false);
 
+    // Add key press event
+    this.input.keyboard!.on('keydown-W', () => {
+        if (this.wall === 0) {
+        this.walterWhiteImage.setVisible(!this.walterWhiteImage.visible);
+        theme.play();
+        hecantkeep.play();
+        this.wall += 1;
+        }
+    });
+    this.input.keyboard!.on('keydown-G', () => {
+        if (this.gok === 0) {
+        this.gokuu.setVisible(!this.gokuu.visible);
+        pro.play();
+        this.gok += 1;
+        }
+    });
+    this.input.keyboard!.on('keydown-C', () => {
+        if (this.catt === 0) {
+        this.hahacat.setVisible(!this.gokuu.visible);
+        hah.play();
+        this.catt += 1;
+        }
+    });
+    this.input.keyboard!.on('keydown-S', () => {
+        if (this.sauul === 0) {
+        this.good.setVisible(!this.good.visible);
+        sualtheme.play();
+        this.sauul += 1;
+        }
+    });
   }
 
   computerTurn() {
@@ -238,46 +278,6 @@ export class Game extends Scene {
       });
     }
     
-        // Add the walterwhite image and make it invisible initially
-        this.walterWhiteImage = this.add.image(950, 460, 'walterwhite').setScale(2);
-        this.walterWhiteImage.setVisible(false);
-        this.gokuu = this.add.image(958, 460, 'goku').setScale(1.592);
-        this.gokuu.setVisible(false);
-        this.hahacat = this.add.image(958, 460, 'hahacat').setScale(2.6);
-        this.hahacat.setVisible(false);
-        this.good = this.add.image(958, 460, 'good').setScale(2.6);
-        this.good.setVisible(false);
-
-        // Add key press event
-        this.input.keyboard.on('keydown-W', () => {
-            if (this.wall === 0) {
-            this.walterWhiteImage.setVisible(!this.walterWhiteImage.visible);
-            theme.play();
-            hecantkeep.play();
-            this.wall += 1;
-            }
-        });
-        this.input.keyboard.on('keydown-G', () => {
-            if (this.gok === 0) {
-            this.gokuu.setVisible(!this.gokuu.visible);
-            pro.play();
-            this.gok += 1;
-            }
-        });
-        this.input.keyboard.on('keydown-C', () => {
-            if (this.catt === 0) {
-            this.hahacat.setVisible(!this.gokuu.visible);
-            hah.play();
-            this.catt += 1;
-            }
-        });
-        this.input.keyboard.on('keydown-S', () => {
-            if (this.sauul === 0) {
-            this.good.setVisible(!this.good.visible);
-            sualtheme.play();
-            this.sauul += 1;
-            }
-        });
     this.catBark.play(); // Play the audio when the animation is triggered
     this.score += 1;
     this.scoreText.setText('Score: ' + this.score);
