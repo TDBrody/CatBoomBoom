@@ -37,6 +37,8 @@ export class Preloader extends Scene
         this.load.spritesheet('catboom', 'catblowupohnocaboommeowmeow.png', { frameWidth: 3240, frameHeight: 3240 });
         this.load.audio('meow', 'meow.mp3'); // Preload the audio file
         this.load.audio('theme', 'histheme.mp3'); // Preload the audio file
+        this.load.audio('pro', 'prow.mp3'); // Preload the audio file
+        this.load.audio('hah', 'haha.mp3'); // Preload the audio file
         this.load.audio('meowboomboommeowboomy', 'kaboomymeow.mp3'); // Preload the audio file
         this.load.audio('hecantkeep', 'getaway.mp3'); // Preload the audio file
     }

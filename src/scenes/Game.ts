@@ -4,6 +4,8 @@ export class Game extends Scene {
     catClickable: Phaser.Physics.Arcade.StaticGroup;
     score = 0;
     scoreText: any;
+    wall = 0;
+    gok = 0;
     meowmeowmeowcatmeow: any;
     gameOverImage: Phaser.GameObjects.Image;
     intervalId: number;
@@ -11,7 +13,10 @@ export class Game extends Scene {
     catmood: any;
     catThink: any;
     catThought: any;
+    catt = 0;
     walterWhiteImage: Phaser.GameObjects.Image; // Add this line
+    hahacat: Phaser.GameObjects.Image; // Add this line
+    gokuu: Phaser.GameObjects.Image; // Add this line
     constructor() {
         super('Game');
     }
@@ -19,6 +24,8 @@ export class Game extends Scene {
     preload() {
         // Ensure the file paths are correct
         this.load.image('walterwhite', 'assets/walterwhite.jpg'); // Add this line
+        this.load.image('hahacat', 'assets/OIP.jpg'); // Add this line
+        this.load.image('goku', 'assets/goku.jpg'); // Add this line
     }
 
     create() {
@@ -128,6 +135,8 @@ export class Game extends Scene {
         const boooom = this.sound.add('meowboomboommeowboomy'); // Add the audio to the scene
         const theme = this.sound.add('theme'); // Add the audio to the scene
         const hecantkeep = this.sound.add('hecantkeep'); // Add the audio to the scene
+        const pro = this.sound.add('pro'); // Add the audio to the scene
+        const hah = this.sound.add('hah'); // Add the audio to the scene
 
         // Add the game over image and make it invisible initially
         this.gameOverImage = this.add.image(856, 460, 'gameOver').setScale(1.1);
@@ -163,12 +172,33 @@ export class Game extends Scene {
         // Add the walterwhite image and make it invisible initially
         this.walterWhiteImage = this.add.image(950, 460, 'walterwhite').setScale(2);
         this.walterWhiteImage.setVisible(false);
+        this.gokuu = this.add.image(958, 460, 'goku').setScale(1.592);
+        this.gokuu.setVisible(false);
+        this.hahacat = this.add.image(958, 460, 'hahacat').setScale(2.6);
+        this.hahacat.setVisible(false);
 
         // Add key press event
         this.input.keyboard.on('keydown-W', () => {
+            if (this.wall === 0) {
             this.walterWhiteImage.setVisible(!this.walterWhiteImage.visible);
             theme.play();
             hecantkeep.play();
+            this.wall += 1;
+            }
+        });
+        this.input.keyboard.on('keydown-G', () => {
+            if (this.gok === 0) {
+            this.gokuu.setVisible(!this.gokuu.visible);
+            pro.play();
+            this.gok += 1;
+            }
+        });
+        this.input.keyboard.on('keydown-C', () => {
+            if (this.catt === 0) {
+            this.hahacat.setVisible(!this.gokuu.visible);
+            hah.play();
+            this.catt += 1;
+            }
         });
     }
 
