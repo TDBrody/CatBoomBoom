@@ -41,6 +41,7 @@ export class Preloader extends Scene
         this.load.audio('hah', 'haha.mp3'); // Preload the audio file
         this.load.audio('meowboomboommeowboomy', 'kaboomymeow.mp3'); // Preload the audio file
         this.load.audio('hecantkeep', 'getaway.mp3'); // Preload the audio file
+        this.load.audio('sualtheme', 'sual.mp3'); // Preload the audio file
     }
 
     create ()

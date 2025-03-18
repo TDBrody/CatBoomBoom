@@ -14,9 +14,11 @@ export class Game extends Scene {
     catThink: any;
     catThought: any;
     catt = 0;
+    sauul = 0;
     walterWhiteImage: Phaser.GameObjects.Image; // Add this line
     hahacat: Phaser.GameObjects.Image; // Add this line
     gokuu: Phaser.GameObjects.Image; // Add this line
+    good: Phaser.GameObjects.Image; // Add this line
     constructor() {
         super('Game');
     }
@@ -26,6 +28,7 @@ export class Game extends Scene {
         this.load.image('walterwhite', 'assets/walterwhite.jpg'); // Add this line
         this.load.image('hahacat', 'assets/OIP.jpg'); // Add this line
         this.load.image('goku', 'assets/goku.jpg'); // Add this line
+        this.load.image('good', 'assets/goodman.jpg'); // Add this line
     }
 
     create() {
@@ -137,6 +140,7 @@ export class Game extends Scene {
         const hecantkeep = this.sound.add('hecantkeep'); // Add the audio to the scene
         const pro = this.sound.add('pro'); // Add the audio to the scene
         const hah = this.sound.add('hah'); // Add the audio to the scene
+        const sualtheme = this.sound.add('sualtheme'); // Add the audio to the scene
 
         // Add the game over image and make it invisible initially
         this.gameOverImage = this.add.image(856, 460, 'gameOver').setScale(1.1);
@@ -176,6 +180,8 @@ export class Game extends Scene {
         this.gokuu.setVisible(false);
         this.hahacat = this.add.image(958, 460, 'hahacat').setScale(2.6);
         this.hahacat.setVisible(false);
+        this.good = this.add.image(958, 460, 'good').setScale(2.6);
+        this.good.setVisible(false);
 
         // Add key press event
         this.input.keyboard.on('keydown-W', () => {
@@ -198,6 +204,13 @@ export class Game extends Scene {
             this.hahacat.setVisible(!this.gokuu.visible);
             hah.play();
             this.catt += 1;
+            }
+        });
+        this.input.keyboard.on('keydown-S', () => {
+            if (this.sauul === 0) {
+            this.good.setVisible(!this.good.visible);
+            sualtheme.play();
+            this.sauul += 1;
             }
         });
     }
