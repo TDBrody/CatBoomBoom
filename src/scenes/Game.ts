@@ -15,6 +15,7 @@ export class Game extends Scene {
   catThink: Phaser.GameObjects.Text;
   catThought: string;
   callback: Phaser.GameObjects.Text;
+  aiMode: boolean;
   catNum: number;
   boooom: Phaser.GameObjects.Text;
   meowSound: Phaser.Sound.BaseSound;
@@ -171,30 +172,33 @@ export class Game extends Scene {
       }
       meowSound.play(); // Play the audio when the animation is triggered
       this.score += 1;
-      this.scoreText.setText('Score: ' + this.score);
+      this.scoreText.setText('Score: ' + this.score + "                  " + (this.aiMode ? "COMPUTER FIGHT TIME" : "fight me (press E)"));
     });
 
-    this.scoreText = this.add.text(16, 16, 'Score: 0', { fontSize: '48px', color: '#000' });
+    this.scoreText = this.add.text(16, 16, 'Score: 0' + "                  " + (this.aiMode ? "COMPUTER FIGHT TIME" : "fight me (press E)"), { fontSize: '48px', color: '#000' });
     this.catThink = this.add.text(16, 140, '"I is a cat meow"', { fontSize: '48px', color: '#000' });
     this.meowmeowmeowcatmeow = this.add.text(14, 50, 'Boom Boom Chance: 16.67%', { fontSize: '48px', color: '#000' });
     this.catmood = this.add.text(14, 90, 'Cat Happiness: 100', { fontSize: '48px', color: '#000' });
-
-    this.input.keyboard.on('keydown-E', () => {
-    this.input.on('gameobjectup', (_pointer: Phaser.Input.Pointer, gameObject: Phaser.GameObjects.Sprite) => {
-      // Add the event
-      const event = this.time.addEvent({
-          delay: 1500, // ms
-          callback: () => {
+    this.aiMode = false;
+    this.input.keyboard!.on('keydown-E', () => {
+      if (!this.aiMode) {
+        this.aiMode = true;
+        this.input.on('gameobjectup', (_pointer: Phaser.Input.Pointer, gameObject: Phaser.GameObjects.Sprite) => {
+          // Add the event
+          const event = this.time.addEvent({
+            delay: 1500, // ms
+            callback: () => {
               this.computerTurn();
               // Stop the event after it has executed once
               event.remove(); // This removes the event after the first execution
-          },
-          callbackScope: this,
-          loop: false, // Ensures the event only happens once
-      });
+            },
+            callbackScope: this,
+            loop: false, // Ensures the event only happens once
+          });
+        });
+      }
     });
-  });
-  
+
   }
 
   computerTurn() {
