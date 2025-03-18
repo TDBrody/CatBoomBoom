@@ -6,6 +6,14 @@ function convertToInversePercentage(decimal: number): string {
 
 export class Game extends Scene {
   score = 0;
+  wall = 0;
+  gok = 0;
+  catt = 0;
+  sauul = 0;
+  walterWhiteImage: Phaser.GameObjects.Image;
+  hahacat: Phaser.GameObjects.Image;
+  gokuu: Phaser.GameObjects.Image;
+  good: Phaser.GameObjects.Image;
   scoreText: Phaser.GameObjects.Text;
   meowmeowmeowcatmeow: Phaser.GameObjects.Text;
   gameOverImage: Phaser.GameObjects.Image;
@@ -30,6 +38,10 @@ export class Game extends Scene {
 
   preload() {
     // Ensure the file paths are correct
+    this.load.image('walterwhite', 'assets/walterwhite.jpg');
+    this.load.image('hahacat', 'assets/OIP.jpg');
+    this.load.image('goku', 'assets/goku.jpg');
+    this.load.image('good', 'assets/goodman.jpg');
     this.load.image('background', 'assets/meowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeow.jpg');
     this.load.image('gameOver', 'assets/meo.jpg'); // Preload the game over image
     this.load.spritesheet('cat', 'assets/cat.png', { frameWidth: 1080, frameHeight: 1080 });
@@ -146,6 +158,11 @@ export class Game extends Scene {
 
     const meowSound = this.sound.add('meow'); // Add the audio to the scene
     const boooom = this.sound.add('meowboomboommeowboomy'); // Add the audio to the scene
+    const theme = this.sound.add('theme'); // Add the audio to the scene
+    const hecantkeep = this.sound.add('hecantkeep'); // Add the audio to the scene
+    const pro = this.sound.add('pro'); // Add the audio to the scene
+    const hah = this.sound.add('hah'); // Add the audio to the scene
+    const sualtheme = this.sound.add('sualtheme'); // Add the audio to the scene
     this.explode = boooom;
     this.catBark = meowSound;
 
@@ -220,6 +237,47 @@ export class Game extends Scene {
         this.input.enabled = false; // Disable further input
       });
     }
+    
+        // Add the walterwhite image and make it invisible initially
+        this.walterWhiteImage = this.add.image(950, 460, 'walterwhite').setScale(2);
+        this.walterWhiteImage.setVisible(false);
+        this.gokuu = this.add.image(958, 460, 'goku').setScale(1.592);
+        this.gokuu.setVisible(false);
+        this.hahacat = this.add.image(958, 460, 'hahacat').setScale(2.6);
+        this.hahacat.setVisible(false);
+        this.good = this.add.image(958, 460, 'good').setScale(2.6);
+        this.good.setVisible(false);
+
+        // Add key press event
+        this.input.keyboard.on('keydown-W', () => {
+            if (this.wall === 0) {
+            this.walterWhiteImage.setVisible(!this.walterWhiteImage.visible);
+            theme.play();
+            hecantkeep.play();
+            this.wall += 1;
+            }
+        });
+        this.input.keyboard.on('keydown-G', () => {
+            if (this.gok === 0) {
+            this.gokuu.setVisible(!this.gokuu.visible);
+            pro.play();
+            this.gok += 1;
+            }
+        });
+        this.input.keyboard.on('keydown-C', () => {
+            if (this.catt === 0) {
+            this.hahacat.setVisible(!this.gokuu.visible);
+            hah.play();
+            this.catt += 1;
+            }
+        });
+        this.input.keyboard.on('keydown-S', () => {
+            if (this.sauul === 0) {
+            this.good.setVisible(!this.good.visible);
+            sualtheme.play();
+            this.sauul += 1;
+            }
+        });
     this.catBark.play(); // Play the audio when the animation is triggered
     this.score += 1;
     this.scoreText.setText('Score: ' + this.score);
