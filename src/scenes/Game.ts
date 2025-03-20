@@ -163,6 +163,8 @@ export class Game extends Scene {
     const pro = this.sound.add('pro'); // Add the audio to the scene
     const hah = this.sound.add('hah'); // Add the audio to the scene
     const sualtheme = this.sound.add('sualtheme'); // Add the audio to the scene
+    const full = this.sound.add('full');
+    const hapi = this.sound.add('hapi');
     this.explode = boooom;
     this.catBark = meowSound;
 
