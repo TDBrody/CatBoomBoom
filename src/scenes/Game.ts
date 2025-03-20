@@ -10,10 +10,14 @@ export class Game extends Scene {
   gok = 0;
   catt = 0;
   sauul = 0;
+  holesum = 0;
+  bidenblastnumber = 0;
   walterWhiteImage: Phaser.GameObjects.Image;
   hahacat: Phaser.GameObjects.Image;
   gokuu: Phaser.GameObjects.Image;
   good: Phaser.GameObjects.Image;
+  biden: Phaser.GameObjects.Image; 
+  happpiCat: Phaser.GameObjects.Image; 
   scoreText: Phaser.GameObjects.Text;
   meowmeowmeowcatmeow: Phaser.GameObjects.Text;
   gameOverImage: Phaser.GameObjects.Image;
@@ -42,12 +46,8 @@ export class Game extends Scene {
     this.load.image('hahacat', 'assets/OIP.jpg');
     this.load.image('goku', 'assets/goku.jpg');
     this.load.image('good', 'assets/goodman.jpg');
-    this.load.image('background', 'assets/meowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeow.jpg');
-    this.load.image('gameOver', 'assets/meo.jpg'); // Preload the game over image
-    this.load.spritesheet('cat', 'assets/cat.png', { frameWidth: 1080, frameHeight: 1080 });
-    this.load.spritesheet('catboom', 'assets/catblowupohnocaboommeowmeow.png', { frameWidth: 3240, frameHeight: 3240 });
-    this.load.audio('meow', 'assets/meow.mp3'); // Preload the audio file
-    this.load.audio('meowboomboommeowboomy', 'assets/kaboomymeow.mp3'); // Preload the audio file
+    this.load.image('biden', 'assets/biden.jpg');
+    this.load.image('happpiCat', 'assets/happicat.jpg'); 
   }
 
   create() {
@@ -256,6 +256,22 @@ export class Game extends Scene {
         this.sauul += 1;
         }
     });
+
+    this.input.keyboard.on('keydown-B', () => {
+      if (this.bidenblastnumber === 0) {
+      this.biden.setVisible(!this.biden.visible);
+      full.play();
+      this.bidenblastnumber += 1;
+      }
+  });
+
+  this.input.keyboard.on('keydown-H', () => {
+    if (this.wall === 0) {
+    this.happpiCat.setVisible(!this.happpiCat.visible);
+    hapi.play();
+    this.holesum += 1;
+    }
+});
   }
 
   computerTurn() {
