@@ -16,8 +16,8 @@ export class Game extends Scene {
   hahacat: Phaser.GameObjects.Image;
   gokuu: Phaser.GameObjects.Image;
   good: Phaser.GameObjects.Image;
-  biden: Phaser.GameObjects.Image; 
-  happpiCat: Phaser.GameObjects.Image; 
+  biden: Phaser.GameObjects.Image;
+  happpiCat: Phaser.GameObjects.Image;
   scoreText: Phaser.GameObjects.Text;
   meowmeowmeowcatmeow: Phaser.GameObjects.Text;
   gameOverImage: Phaser.GameObjects.Image;
@@ -47,7 +47,7 @@ export class Game extends Scene {
     this.load.image('goku', 'assets/goku.jpg');
     this.load.image('good', 'assets/goodman.jpg');
     this.load.image('biden', 'assets/biden.jpg');
-    this.load.image('happpiCat', 'assets/happicat.jpg'); 
+    this.load.image('happpiCat', 'assets/happicat.jpg');
   }
 
   create() {
@@ -217,7 +217,7 @@ export class Game extends Scene {
         });
       }
     });
-    
+
     // Add the walterwhite image and make it invisible initially
     this.walterWhiteImage = this.add.image(950, 460, 'walterwhite').setScale(2);
     this.walterWhiteImage.setVisible(false);
@@ -230,50 +230,50 @@ export class Game extends Scene {
 
     // Add key press event
     this.input.keyboard!.on('keydown-W', () => {
-        if (this.wall === 0) {
+      if (this.wall === 0) {
         this.walterWhiteImage.setVisible(!this.walterWhiteImage.visible);
         theme.play();
         hecantkeep.play();
         this.wall += 1;
-        }
+      }
     });
     this.input.keyboard!.on('keydown-G', () => {
-        if (this.gok === 0) {
+      if (this.gok === 0) {
         this.gokuu.setVisible(!this.gokuu.visible);
         pro.play();
         this.gok += 1;
-        }
+      }
     });
     this.input.keyboard!.on('keydown-C', () => {
-        if (this.catt === 0) {
+      if (this.catt === 0) {
         this.hahacat.setVisible(!this.gokuu.visible);
         hah.play();
         this.catt += 1;
-        }
+      }
     });
     this.input.keyboard!.on('keydown-S', () => {
-        if (this.sauul === 0) {
+      if (this.sauul === 0) {
         this.good.setVisible(!this.good.visible);
         sualtheme.play();
         this.sauul += 1;
-        }
+      }
     });
 
     this.input.keyboard!.on('keydown-B', () => {
       if (this.bidenblastnumber === 0) {
-      this.biden.setVisible(!this.biden.visible);
-      full.play();
-      this.bidenblastnumber += 1;
+        this.biden.setVisible(!this.biden.visible);
+        full.play();
+        this.bidenblastnumber += 1;
       }
-  });
+    });
 
-  this.input.keyboard!.on('keydown-H', () => {
-    if (this.wall === 0) {
-    this.happpiCat.setVisible(!this.happpiCat.visible);
-    hapi.play();
-    this.holesum += 1;
-    }
-});
+    this.input.keyboard!.on('keydown-H', () => {
+      if (this.wall === 0) {
+        this.happpiCat.setVisible(!this.happpiCat.visible);
+        hapi.play();
+        this.holesum += 1;
+      }
+    });
   }
 
   computerTurn() {
@@ -295,7 +295,7 @@ export class Game extends Scene {
         this.input.enabled = false; // Disable further input
       });
     }
-    
+
     this.catBark.play(); // Play the audio when the animation is triggered
     this.score += 1;
     this.scoreText.setText('Score: ' + this.score);
