@@ -259,7 +259,7 @@ export class Game extends Scene {
         }
     });
 
-    this.input.keyboard.on('keydown-B', () => {
+    this.input.keyboard!.on('keydown-B', () => {
       if (this.bidenblastnumber === 0) {
       this.biden.setVisible(!this.biden.visible);
       full.play();
@@ -267,7 +267,7 @@ export class Game extends Scene {
       }
   });
 
-  this.input.keyboard.on('keydown-H', () => {
+  this.input.keyboard!.on('keydown-H', () => {
     if (this.wall === 0) {
     this.happpiCat.setVisible(!this.happpiCat.visible);
     hapi.play();
