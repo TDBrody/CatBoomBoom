@@ -12,12 +12,22 @@ export class Game extends Scene {
   sauul = 0;
   holesum = 0;
   bidenblastnumber = 0;
+  pig = 0;
+  big = 0;
+  skel = 0;
+  comp = 0;
+  bolognese = 0;
   walterWhiteImage: Phaser.GameObjects.Image;
   hahacat: Phaser.GameObjects.Image;
   gokuu: Phaser.GameObjects.Image;
   good: Phaser.GameObjects.Image;
   biden: Phaser.GameObjects.Image;
   happpiCat: Phaser.GameObjects.Image;
+  meta: Phaser.GameObjects.Image;
+  sans: Phaser.GameObjects.Image;
+  pap: Phaser.GameObjects.Image; 
+  swine: Phaser.GameObjects.Image;
+  bigGreen: Phaser.GameObjects.Image;
   scoreText: Phaser.GameObjects.Text;
   meowmeowmeowcatmeow: Phaser.GameObjects.Text;
   gameOverImage: Phaser.GameObjects.Image;
@@ -48,6 +58,11 @@ export class Game extends Scene {
     this.load.image('good', 'assets/goodman.jpg');
     this.load.image('biden', 'assets/biden.jpg');
     this.load.image('happpiCat', 'assets/happicat.jpg');
+    this.load.image('meta', 'assets/met.jpg');
+    this.load.image('sans', 'assets/sans.jpg');
+    this.load.image('pap', 'assets/pap.jpg');
+    this.load.image('swine', 'assets/pig.jpg');
+    this.load.image('bigGreen', 'assets/biggreen.jpg');
   }
 
   create() {
@@ -165,6 +180,11 @@ export class Game extends Scene {
     const sualtheme = this.sound.add('sualtheme'); // Add the audio to the scene
     const full = this.sound.add('full');
     const hapi = this.sound.add('hapi');
+    const metaa = this.sound.add('metaa')
+    const skell = this.sound.add('skell')
+    const pasta = this.sound.add('pasta')
+    const pig = this.sound.add('pig')
+    const green = this.sound.add('green')
     this.explode = boooom;
     this.catBark = meowSound;
 
@@ -227,6 +247,16 @@ export class Game extends Scene {
     this.hahacat.setVisible(false);
     this.good = this.add.image(958, 460, 'good').setScale(2.6);
     this.good.setVisible(false);
+    this.meta = this.add.image(958, 460, 'meta').setScale(2.6);
+    this.meta.setVisible(false);
+    this.sans = this.add.image(958, 460, 'sans').setScale(2.6);
+    this.sans.setVisible(false);
+    this.pap = this.add.image(958, 460, 'pap').setScale(2.6);
+    this.pap.setVisible(false);
+    this.swine = this.add.image(958, 460, 'swine').setScale(2.6);
+    this.swine.setVisible(false);
+    this.bigGreen = this.add.image(958, 460, 'bigGreen').setScale(2.6);
+    this.bigGreen.setVisible(false);
 
     // Add key press event
     this.input.keyboard!.on('keydown-W', () => {
@@ -268,13 +298,52 @@ export class Game extends Scene {
     });
 
     this.input.keyboard!.on('keydown-H', () => {
-      if (this.wall === 0) {
+      if (this.holesum === 0) {
         this.happpiCat.setVisible(!this.happpiCat.visible);
         hapi.play();
         this.holesum += 1;
       }
     });
-  }
+  
+    this.input.keyboard!.on('keydown-L', () => { //biggreen
+      if (this.big === 0) {
+        this.bigGreen.setVisible(!this.bigGreen.visible);
+        green.play();
+        this.big += 1;
+      }
+    });
+  
+    this.input.keyboard!.on('keydown-P', () => { //Pig
+      if (this.pig === 0) {
+        this.swine.setVisible(!this.swine.visible);
+       pig.play();
+       this.pig += 1;
+      }
+    });
+    this.input.keyboard!.on('keydown-U', () => { //Sans
+      if (this.skel === 0) {
+        this.happpiCat.setVisible(!this.happpiCat.visible);
+       skell.play();
+       this.skel += 1;
+      }
+    });
+    this.input.keyboard!.on('keydown-M', () => { //Met
+      if (this.comp === 0) {
+        this.happpiCat.setVisible(!this.happpiCat.visible);
+       metaa.play();
+       this.comp += 1;
+      }
+    });
+    this.input.keyboard!.on('keydown-P', () => { //Pap
+      if (this.bolognese === 0) {
+        this.happpiCat.setVisible(!this.happpiCat.visible);
+       pasta.play();
+       this.bolognese += 1;
+      }
+    });
+  
+  
+
 
   computerTurn() {
     if (Math.random() < this.catNum) {

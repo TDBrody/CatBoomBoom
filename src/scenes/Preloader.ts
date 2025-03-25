@@ -44,6 +44,11 @@ export class Preloader extends Scene
         this.load.audio('sualtheme', 'sual.mp3'); // Preload the audio file
         this.load.audio('full', 'fullpower.mp3');
         this.load.audio('hapi', 'happi.mp3');
+        this.load.audio('metaa', 'mettheme.mp3');
+        this.load.audio('skell', 'sanstheme.mp3');
+        this.load.audio('pasta', 'paptheme.mp3');
+        this.load.audio('pig', 'pigtheme.mp3');
+        this.load.audio('green', 'biggreentheme.mp3');
     }
 
     create ()
