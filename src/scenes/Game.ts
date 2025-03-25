@@ -321,7 +321,7 @@ export class Game extends Scene {
        this.pig += 1;
       }
     });
-    this.input.keyboard!.on('keydown-U', () => { //BROKEN
+    this.input.keyboard!.on('keydown-U', () => { //fix
       if (this.skel === 0) {
         this.sans.setVisible(!this.sans.visible);
        skell.play();
