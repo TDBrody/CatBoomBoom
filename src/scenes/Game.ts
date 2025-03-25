@@ -16,7 +16,8 @@ export class Game extends Scene {
   big = 0;
   skel = 0;
   comp = 0;
-  bolognese = 0;
+  bolognese = 0;5
+  
   walterWhiteImage: Phaser.GameObjects.Image;
   hahacat: Phaser.GameObjects.Image;
   gokuu: Phaser.GameObjects.Image;
@@ -257,7 +258,7 @@ export class Game extends Scene {
     this.swine.setVisible(false);
     this.bigGreen = this.add.image(958, 460, 'bigGreen').setScale(2.6);
     this.bigGreen.setVisible(false);
-
+  
     // Add key press event
     this.input.keyboard!.on('keydown-W', () => {
       if (this.wall === 0) {
@@ -305,7 +306,7 @@ export class Game extends Scene {
       }
     });
   
-    this.input.keyboard!.on('keydown-L', () => { //biggreen
+    this.input.keyboard!.on('keydown-L', () => { //WORKING
       if (this.big === 0) {
         this.bigGreen.setVisible(!this.bigGreen.visible);
         green.play();
@@ -313,36 +314,35 @@ export class Game extends Scene {
       }
     });
   
-    this.input.keyboard!.on('keydown-P', () => { //Pig
+    this.input.keyboard!.on('keydown-P', () => { //BROKEN
       if (this.pig === 0) {
         this.swine.setVisible(!this.swine.visible);
        pig.play();
        this.pig += 1;
       }
     });
-    this.input.keyboard!.on('keydown-U', () => { //Sans
+    this.input.keyboard!.on('keydown-U', () => { //BROKEN
       if (this.skel === 0) {
-        this.happpiCat.setVisible(!this.happpiCat.visible);
+        this.sans.setVisible(!this.sans.visible);
        skell.play();
        this.skel += 1;
       }
     });
-    this.input.keyboard!.on('keydown-M', () => { //Met
+    this.input.keyboard!.on('keydown-M', () => { //BROKEN
       if (this.comp === 0) {
-        this.happpiCat.setVisible(!this.happpiCat.visible);
+        this.meta.setVisible(!this.meta.visible);
        metaa.play();
        this.comp += 1;
       }
     });
     this.input.keyboard!.on('keydown-P', () => { //Pap
       if (this.bolognese === 0) {
-        this.happpiCat.setVisible(!this.happpiCat.visible);
+        this.pap.setVisible(!this.pap.visible);
        pasta.play();
        this.bolognese += 1;
       }
     });
-  
-  
+  }
 
 
   computerTurn() {
