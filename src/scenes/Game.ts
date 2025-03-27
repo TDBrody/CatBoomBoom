@@ -12,11 +12,11 @@ export class Game extends Scene {
   sauul = 0;
   holesum = 0;
   bidenblastnumber = 0;
-  pig = 0;
+  piggi = 0;
   big = 0;
   skel = 0;
   comp = 0;
-  bolognese = 0;5
+  bolognese = 0;
   
   walterWhiteImage: Phaser.GameObjects.Image;
   hahacat: Phaser.GameObjects.Image;
@@ -61,8 +61,8 @@ export class Game extends Scene {
     this.load.image('happpiCat', 'assets/happicat.jpg');
     this.load.image('meta', 'assets/met.jpg');
     this.load.image('sans', 'assets/sans.jpg');
-    this.load.image('pap', 'assets/pap.jpg');
-    this.load.image('swine', 'assets/pig.jpg');
+    this.load.image('pap', 'assets/pap.png');
+    this.load.image('swine', 'assets/pig.png');
     this.load.image('bigGreen', 'assets/biggreen.jpg');
   }
 
@@ -248,11 +248,12 @@ export class Game extends Scene {
     this.hahacat.setVisible(false);
     this.good = this.add.image(958, 460, 'good').setScale(2.6);
     this.good.setVisible(false);
-    this.meta = this.add.image(958, 460, 'meta').setScale(2.6);
+
+    this.meta = this.add.image(958, 460, 'meta').setScale(2);
     this.meta.setVisible(false);
-    this.sans = this.add.image(958, 460, 'sans').setScale(2.6);
+    this.sans = this.add.image(958, 460, 'sans').setScale(1.7);
     this.sans.setVisible(false);
-    this.pap = this.add.image(958, 460, 'pap').setScale(2.6);
+    this.pap = this.add.image(958, 460, 'pap').setScale(3);
     this.pap.setVisible(false);
     this.swine = this.add.image(958, 460, 'swine').setScale(2.6);
     this.swine.setVisible(false);
@@ -306,7 +307,7 @@ export class Game extends Scene {
       }
     });
   
-    this.input.keyboard!.on('keydown-L', () => { //WORKING
+    this.input.keyboard!.on('keydown-L', () => { 
       if (this.big === 0) {
         this.bigGreen.setVisible(!this.bigGreen.visible);
         green.play();
@@ -314,30 +315,30 @@ export class Game extends Scene {
       }
     });
   
-    this.input.keyboard!.on('keydown-P', () => { //BROKEN
-      if (this.pig === 0) {
+    this.input.keyboard!.on('keydown-I', () => { 
+      if (this.piggi === 0) {
         this.swine.setVisible(!this.swine.visible);
        pig.play();
-       this.pig += 1;
+       this.piggi += 1;
       }
     });
-    this.input.keyboard!.on('keydown-U', () => { //fix
+    this.input.keyboard!.on('keydown-U', () => { 
       if (this.skel === 0) {
         this.sans.setVisible(!this.sans.visible);
        skell.play();
        this.skel += 1;
       }
     });
-    this.input.keyboard!.on('keydown-M', () => { //BROKEN
+    this.input.keyboard!.on('keydown-M', () => { 
       if (this.comp === 0) {
         this.meta.setVisible(!this.meta.visible);
        metaa.play();
        this.comp += 1;
       }
     });
-    this.input.keyboard!.on('keydown-P', () => { //Pap
+    this.input.keyboard!.on('keydown-P', () => { 
       if (this.bolognese === 0) {
-        this.pap.setVisible(!this.pap.visible);
+       this.pap.setVisible(!this.pap.visible);
        pasta.play();
        this.bolognese += 1;
       }
