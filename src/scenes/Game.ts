@@ -257,7 +257,7 @@ export class Game extends Scene {
     this.pap.setVisible(false);
     this.swine = this.add.image(958, 460, 'swine').setScale(2.6);
     this.swine.setVisible(false);
-    this.bigGreen = this.add.image(958, 460, 'bigGreen').setScale(2.6);
+    this.bigGreen = this.add.image(958, 460, 'bigGreen').setScale(2.3);
     this.bigGreen.setVisible(false);
   
     // Add key press event
