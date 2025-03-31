@@ -17,7 +17,7 @@ export class Game extends Scene {
   skel = 0;
   comp = 0;
   bolognese = 0;
-  man = 0;
+  omningIt = 0;
   
   walterWhiteImage: Phaser.GameObjects.Image;
   hahacat: Phaser.GameObjects.Image;
@@ -187,6 +187,7 @@ export class Game extends Scene {
     const metaa = this.sound.add('metaa')
     const skell = this.sound.add('skell')
     const pasta = this.sound.add('pasta')
+    const think = this.sound.add('think')
     const pig = this.sound.add('pig')
     const green = this.sound.add('green')
     this.explode = boooom;
@@ -262,6 +263,8 @@ export class Game extends Scene {
     this.swine.setVisible(false);
     this.bigGreen = this.add.image(958, 460, 'bigGreen').setScale(2.3);
     this.bigGreen.setVisible(false);
+    this.omni = this.add.image(958, 460, 'omni').setScale(2.3);
+    this.omni.setVisible(false);
   
     // Add key press event
     this.input.keyboard!.on('keydown-W', () => {
@@ -348,10 +351,10 @@ export class Game extends Scene {
     });
 
     this.input.keyboard!.on('keydown-O', () => { 
-      if (this.man === 0) {
+      if (this.omningIt === 0) {
        this.omni.setVisible(!this.omni.visible);
        think.play();
-       this.man += 1;
+       this.omningIt += 1;
       }
     });
   }
