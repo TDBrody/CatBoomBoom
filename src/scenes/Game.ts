@@ -17,6 +17,7 @@ export class Game extends Scene {
   skel = 0;
   comp = 0;
   bolognese = 0;
+  man = 0;
   
   walterWhiteImage: Phaser.GameObjects.Image;
   hahacat: Phaser.GameObjects.Image;
@@ -27,6 +28,7 @@ export class Game extends Scene {
   meta: Phaser.GameObjects.Image;
   sans: Phaser.GameObjects.Image;
   pap: Phaser.GameObjects.Image; 
+  omni: Phaser.GameObjects.Image; 
   swine: Phaser.GameObjects.Image;
   bigGreen: Phaser.GameObjects.Image;
   scoreText: Phaser.GameObjects.Text;
@@ -62,6 +64,7 @@ export class Game extends Scene {
     this.load.image('meta', 'assets/met.jpg');
     this.load.image('sans', 'assets/sans.jpg');
     this.load.image('pap', 'assets/pap.png');
+    this.load.image('omni', 'assets/onimn.jpg');
     this.load.image('swine', 'assets/pig.png');
     this.load.image('bigGreen', 'assets/biggreen.jpg');
   }
@@ -315,7 +318,7 @@ export class Game extends Scene {
       }
     });
   
-    this.input.keyboard!.on('keydown-I', () => { 
+    this.input.keyboard!.on('keydown-A', () => { 
       if (this.piggi === 0) {
         this.swine.setVisible(!this.swine.visible);
        pig.play();
@@ -341,6 +344,14 @@ export class Game extends Scene {
        this.pap.setVisible(!this.pap.visible);
        pasta.play();
        this.bolognese += 1;
+      }
+    });
+
+    this.input.keyboard!.on('keydown-O', () => { 
+      if (this.man === 0) {
+       this.omni.setVisible(!this.omni.visible);
+       think.play();
+       this.man += 1;
       }
     });
   }
