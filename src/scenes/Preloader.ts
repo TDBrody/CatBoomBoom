@@ -49,7 +49,7 @@ export class Preloader extends Scene
         this.load.audio('pasta', 'paptheme.mp3');
         this.load.audio('pig', 'pigtheme.mp3');
         this.load.audio('green', 'biggreentheme.mp3');
-        //this.load.audio('thinkMark', '500Years.mp3')
+        this.load.audio('thinkMark', '500Years.mp3')
     }
 
     create ()
