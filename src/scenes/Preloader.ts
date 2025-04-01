@@ -54,6 +54,10 @@ export class Preloader extends Scene
         this.load.audio('baldaao', 'balda2.mp3')
         this.load.audio('baldaaao', 'balda3.mp3')
         this.load.audio('baldaaaao', 'balda4.mp3')
+        this.load.audio('baldaoe', 'wen.mp3')
+        this.load.audio('baldaaoe', 'mon.mp3')
+        this.load.audio('baldaaaoe', 'dem.mp3')
+        this.load.audio('baldaaaaoe', '64.mp3')
     }
 
     create ()

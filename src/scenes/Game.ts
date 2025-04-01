@@ -195,6 +195,10 @@ export class Game extends Scene {
     const baldaao = this.sound.add('baldaao')
     const baldaaao = this.sound.add('baldaaao')
     const baldaaaao = this.sound.add('baldaaaao')
+    const baldaoe = this.sound.add('baldaoe')
+    const baldaaoe = this.sound.add('baldaaoe')
+    const baldaaaoe = this.sound.add('baldaaaoe')
+    const baldaaaaoe = this.sound.add('baldaaaaoe')
     const pig = this.sound.add('pig')
     const green = this.sound.add('green')
     this.explode = boooom;
@@ -376,6 +380,10 @@ export class Game extends Scene {
        baldaao.play();
        baldaaao.play();
        baldaaaao.play();
+       baldaoe.play();
+       baldaaoe.play();
+       baldaaaoe.play();
+       baldaaaaoe.play();
        this.piggi += 1;
       }
     });

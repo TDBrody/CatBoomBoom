@@ -24,14 +24,14 @@ export class MainMenu extends Scene {
             stroke: '#000000', // Black outline
             strokeThickness: 6 // Thickness of the outline
         })
-        this.add.text(1200,20,"Update 71460807.1197979736", {
+        this.add.text(1200,20,"Update 71460807.1197979736 - Press a few buttons", {
             fontSize: '10px',
             color: '#ffffff', // White fill
             fontStyle: 'bold', // Bold font
             stroke: '#000000', // Black outline
             strokeThickness: 2 // Thickness of the outline
         })
-        this.add.text(80,940,"waffles", {
+        this.add.text(80,940,"paincakes", {
             fontSize: '10px',
             color: '#ffffff', // White fill
             fontStyle: 'bold', // Bold font
