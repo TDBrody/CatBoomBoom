@@ -19,6 +19,7 @@ export class Game extends Scene {
   bolognese = 0;
   thickvar = 0;
   
+  
   walterWhiteImage: Phaser.GameObjects.Image;
   hahacat: Phaser.GameObjects.Image;
   gokuu: Phaser.GameObjects.Image;
@@ -31,6 +32,7 @@ export class Game extends Scene {
   thickphoto: Phaser.GameObjects.Image; 
   swine: Phaser.GameObjects.Image;
   bigGreen: Phaser.GameObjects.Image;
+  bald: Phaser.GameObjects.Image;
   scoreText: Phaser.GameObjects.Text;
   meowmeowmeowcatmeow: Phaser.GameObjects.Text;
   gameOverImage: Phaser.GameObjects.Image;
@@ -67,6 +69,7 @@ export class Game extends Scene {
     this.load.image('thickphoto', 'assets/thick.jpg');
     this.load.image('swine', 'assets/pig.png');
     this.load.image('bigGreen', 'assets/biggreen.jpg');
+    this.load.image('bald', 'assets/bald.jpg');
   }
 
   create() {
@@ -188,6 +191,10 @@ export class Game extends Scene {
     const skell = this.sound.add('skell')
     const pasta = this.sound.add('pasta')
     const thinkMark = this.sound.add('thinkMark')
+    const baldao = this.sound.add('baldao')
+    const baldaao = this.sound.add('baldaao')
+    const baldaaao = this.sound.add('baldaaao')
+    const baldaaaao = this.sound.add('baldaaaao')
     const pig = this.sound.add('pig')
     const green = this.sound.add('green')
     this.explode = boooom;
@@ -252,6 +259,8 @@ export class Game extends Scene {
     this.hahacat.setVisible(false);
     this.good = this.add.image(958, 460, 'good').setScale(2.6);
     this.good.setVisible(false);
+    this.bald = this.add.image(958, 460, 'bald').setScale(2.6);
+    this.bald.setVisible(false);
 
     this.meta = this.add.image(958, 460, 'meta').setScale(2);
     this.meta.setVisible(false);
@@ -357,6 +366,16 @@ export class Game extends Scene {
       if (this.piggi === 0) {
        this.thickphoto.setVisible(!this.thickphoto.visible);
        thinkMark.play();
+       this.piggi += 1;
+      }
+    });
+    this.input.keyboard!.on('keydown-K', () => { 
+      if (this.piggi === 0) {
+       this.bald.setVisible(!this.bald.visible);
+       baldao.play();
+       baldaao.play();
+       baldaaao.play();
+       baldaaaao.play();
        this.piggi += 1;
       }
     });
