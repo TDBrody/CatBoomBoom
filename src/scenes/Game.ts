@@ -280,7 +280,7 @@ export class Game extends Scene {
     this.thickphoto.setVisible(false);
   
     // Add key press event
-    this.input.keyboard!.on('keydown-W', () => {
+    this.input.keyboard!.on('keydown-W', () => { //works
       if (this.piggi === 0) {
         this.walterWhiteImage.setVisible(!this.walterWhiteImage.visible);
         theme.play();
@@ -288,14 +288,14 @@ export class Game extends Scene {
         this.piggi += 1;
       }
     });
-    this.input.keyboard!.on('keydown-G', () => {
+    this.input.keyboard!.on('keydown-G', () => { //works
       if (this.piggi === 0) {
         this.gokuu.setVisible(!this.gokuu.visible);
         pro.play();
         this.piggi += 1;
       }
     });
-    this.input.keyboard!.on('keydown-C', () => {
+    this.input.keyboard!.on('keydown-C', () => { //works
         this.hahacat.setVisible(!this.hahacat.visible);
         if (this.catt === 0) {
         hah.play();
@@ -305,7 +305,7 @@ export class Game extends Scene {
         }
         
     });
-    this.input.keyboard!.on('keydown-S', () => {
+    this.input.keyboard!.on('keydown-S', () => { //works
       if (this.piggi === 0) {
         this.good.setVisible(!this.good.visible);
         sualtheme.play();
@@ -313,7 +313,7 @@ export class Game extends Scene {
       }
     });
 
-    this.input.keyboard!.on('keydown-B', () => {
+    this.input.keyboard!.on('keydown-B', () => { //brok
       if (this.piggi === 0) {
         this.biden.setVisible(!this.biden.visible);
         full.play();
@@ -321,7 +321,7 @@ export class Game extends Scene {
       }
     });
 
-    this.input.keyboard!.on('keydown-H', () => {
+    this.input.keyboard!.on('keydown-H', () => { //brok
       if (this.piggi === 0) {
         this.happpiCat.setVisible(!this.happpiCat.visible);
         hapi.play();
@@ -329,7 +329,7 @@ export class Game extends Scene {
       }
     });
   
-    this.input.keyboard!.on('keydown-L', () => { 
+    this.input.keyboard!.on('keydown-L', () => {  //work
       if (this.piggi === 0) {
         this.bigGreen.setVisible(!this.bigGreen.visible);
         green.play();
@@ -337,28 +337,28 @@ export class Game extends Scene {
       }
     });
   
-    this.input.keyboard!.on('keydown-A', () => { 
+    this.input.keyboard!.on('keydown-A', () => { //work
       if (this.piggi === 0) {
         this.swine.setVisible(!this.swine.visible);
        pig.play();
        this.piggi += 1;
       }
     });
-    this.input.keyboard!.on('keydown-U', () => { 
+    this.input.keyboard!.on('keydown-U', () => { //work
       if (this.piggi === 0) {
         this.sans.setVisible(!this.sans.visible);
        skell.play();
        this.piggi += 1;
       }
     });
-    this.input.keyboard!.on('keydown-M', () => { 
+    this.input.keyboard!.on('keydown-M', () => { //work
       if (this.piggi === 0) {
         this.meta.setVisible(!this.meta.visible);
        metaa.play();
        this.piggi += 1;
       }
     });
-    this.input.keyboard!.on('keydown-P', () => { 
+    this.input.keyboard!.on('keydown-P', () => { //work
       if (this.piggi === 0) {
        this.pap.setVisible(!this.pap.visible);
        pasta.play();
@@ -366,14 +366,14 @@ export class Game extends Scene {
       }
     });
 
-    this.input.keyboard!.on('keydown-O', () => { 
+    this.input.keyboard!.on('keydown-O', () => { //work
       if (this.piggi === 0) {
        this.thickphoto.setVisible(!this.thickphoto.visible);
        thinkMark.play();
        this.piggi += 1;
       }
     });
-    this.input.keyboard!.on('keydown-K', () => { 
+    this.input.keyboard!.on('keydown-K', () => { //work
       if (this.piggi === 0) {
        this.bald.setVisible(!this.bald.visible);
        baldao.play();
