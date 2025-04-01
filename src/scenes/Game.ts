@@ -268,56 +268,54 @@ export class Game extends Scene {
   
     // Add key press event
     this.input.keyboard!.on('keydown-W', () => {
-      if (this.wall === 0) {
+      if (this.piggi === 0) {
         this.walterWhiteImage.setVisible(!this.walterWhiteImage.visible);
         theme.play();
         hecantkeep.play();
-        this.wall += 1;
+        this.piggi += 1;
       }
     });
     this.input.keyboard!.on('keydown-G', () => {
-      if (this.gok === 0) {
+      if (this.piggi === 0) {
         this.gokuu.setVisible(!this.gokuu.visible);
         pro.play();
-        this.gok += 1;
+        this.piggi += 1;
       }
     });
     this.input.keyboard!.on('keydown-C', () => {
-      if (this.catt === 0) {
-        this.hahacat.setVisible(!this.gokuu.visible);
+      
+        this.hahacat.setVisible(!this.hahacat.visible);
         hah.play();
-        this.catt += 1;
-      }
     });
     this.input.keyboard!.on('keydown-S', () => {
-      if (this.sauul === 0) {
+      if (this.piggi === 0) {
         this.good.setVisible(!this.good.visible);
         sualtheme.play();
-        this.sauul += 1;
+        this.piggi += 1;
       }
     });
 
     this.input.keyboard!.on('keydown-B', () => {
-      if (this.bidenblastnumber === 0) {
+      if (this.piggi === 0) {
         this.biden.setVisible(!this.biden.visible);
         full.play();
-        this.bidenblastnumber += 1;
+        this.piggi += 1;
       }
     });
 
     this.input.keyboard!.on('keydown-H', () => {
-      if (this.holesum === 0) {
+      if (this.piggi === 0) {
         this.happpiCat.setVisible(!this.happpiCat.visible);
         hapi.play();
-        this.holesum += 1;
+        this.piggi += 1;
       }
     });
   
     this.input.keyboard!.on('keydown-L', () => { 
-      if (this.big === 0) {
+      if (this.piggi === 0) {
         this.bigGreen.setVisible(!this.bigGreen.visible);
         green.play();
-        this.big += 1;
+        this.piggi += 1;
       }
     });
   
@@ -329,32 +327,32 @@ export class Game extends Scene {
       }
     });
     this.input.keyboard!.on('keydown-U', () => { 
-      if (this.skel === 0) {
+      if (this.piggi === 0) {
         this.sans.setVisible(!this.sans.visible);
        skell.play();
-       this.skel += 1;
+       this.piggi += 1;
       }
     });
     this.input.keyboard!.on('keydown-M', () => { 
-      if (this.comp === 0) {
+      if (this.piggi === 0) {
         this.meta.setVisible(!this.meta.visible);
        metaa.play();
-       this.comp += 1;
+       this.piggi += 1;
       }
     });
     this.input.keyboard!.on('keydown-P', () => { 
-      if (this.bolognese === 0) {
+      if (this.piggi === 0) {
        this.pap.setVisible(!this.pap.visible);
        pasta.play();
-       this.bolognese += 1;
+       this.piggi += 1;
       }
     });
 
     this.input.keyboard!.on('keydown-O', () => { 
-      if (this.thickvar === 0) {
+      if (this.piggi === 0) {
        this.thickphoto.setVisible(!this.thickphoto.visible);
        thinkMark.play();
-       this.thickvar += 1;
+       this.piggi += 1;
       }
     });
   }
