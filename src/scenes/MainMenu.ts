@@ -24,14 +24,14 @@ export class MainMenu extends Scene {
             stroke: '#000000', // Black outline
             strokeThickness: 6 // Thickness of the outline
         })
-        this.add.text(1200,20,"Image of Walter White from Breaking Bad. © AMC Networks. Music and audio clips from Breaking Bad. © AMC Networks.", {
+        this.add.text(1200,20,"Update 71460807.1197979736", {
             fontSize: '10px',
             color: '#ffffff', // White fill
             fontStyle: 'bold', // Bold font
             stroke: '#000000', // Black outline
             strokeThickness: 2 // Thickness of the outline
         })
-        this.add.text(80,940,"This project is a parody and is intended for educational purposes only. It uses copyrighted material from Breaking Bad under the fair use doctrine (Title 17, U.S. Code, Section 107). All images, music, and audio clips are the property of AMC Networks. No copyright infringement is intended.", {
+        this.add.text(80,940,"waffles", {
             fontSize: '10px',
             color: '#ffffff', // White fill
             fontStyle: 'bold', // Bold font
