@@ -17,7 +17,7 @@ export class Game extends Scene {
   skel = 0;
   comp = 0;
   bolognese = 0;
-  omningIt = 0;
+  //omningIt = 0;
   
   walterWhiteImage: Phaser.GameObjects.Image;
   hahacat: Phaser.GameObjects.Image;
@@ -28,7 +28,7 @@ export class Game extends Scene {
   meta: Phaser.GameObjects.Image;
   sans: Phaser.GameObjects.Image;
   pap: Phaser.GameObjects.Image; 
-  omni: Phaser.GameObjects.Image; 
+  //omni: Phaser.GameObjects.Image; 
   swine: Phaser.GameObjects.Image;
   bigGreen: Phaser.GameObjects.Image;
   scoreText: Phaser.GameObjects.Text;
@@ -64,7 +64,7 @@ export class Game extends Scene {
     this.load.image('meta', 'assets/met.jpg');
     this.load.image('sans', 'assets/sans.jpg');
     this.load.image('pap', 'assets/pap.png');
-    this.load.image('omni', 'assets/onimn.jpg');
+    //this.load.image('omni', 'assets/onimn.jpg');
     this.load.image('swine', 'assets/pig.png');
     this.load.image('bigGreen', 'assets/biggreen.jpg');
   }
@@ -187,7 +187,7 @@ export class Game extends Scene {
     const metaa = this.sound.add('metaa')
     const skell = this.sound.add('skell')
     const pasta = this.sound.add('pasta')
-    const think = this.sound.add('think')
+    //const thinkMark = this.sound.add('thinkMark')
     const pig = this.sound.add('pig')
     const green = this.sound.add('green')
     this.explode = boooom;
@@ -263,8 +263,8 @@ export class Game extends Scene {
     this.swine.setVisible(false);
     this.bigGreen = this.add.image(958, 460, 'bigGreen').setScale(2.3);
     this.bigGreen.setVisible(false);
-    this.omni = this.add.image(958, 460, 'omni').setScale(2.3);
-    this.omni.setVisible(false);
+    //this.omni = this.add.image(958, 460, 'omni').setScale(2.3);
+    //this.omni.setVisible(false);
   
     // Add key press event
     this.input.keyboard!.on('keydown-W', () => {
@@ -350,13 +350,13 @@ export class Game extends Scene {
       }
     });
 
-    this.input.keyboard!.on('keydown-O', () => { 
-      if (this.omningIt === 0) {
-       this.omni.setVisible(!this.omni.visible);
-       think.play();
-       this.omningIt += 1;
-      }
-    });
+    // this.input.keyboard!.on('keydown-O', () => { 
+    //   if (this.omningIt === 0) {
+    //    this.omni.setVisible(!this.omni.visible);
+    //    thinkMark.play();
+    //    this.omningIt += 1;
+    //   }
+    // });
   }
 
 
