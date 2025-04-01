@@ -283,9 +283,14 @@ export class Game extends Scene {
       }
     });
     this.input.keyboard!.on('keydown-C', () => {
-      
         this.hahacat.setVisible(!this.hahacat.visible);
+        if (this.catt === 0) {
         hah.play();
+        this.catt += 1;
+        }else {
+        this.catt -= 1;
+        }
+        
     });
     this.input.keyboard!.on('keydown-S', () => {
       if (this.piggi === 0) {
