@@ -12,12 +12,27 @@ export class Game extends Scene {
   sauul = 0;
   holesum = 0;
   bidenblastnumber = 0;
+  piggi = 0;
+  big = 0;
+  skel = 0;
+  comp = 0;
+  bolognese = 0;
+  thickvar = 0;
+  
+  
   walterWhiteImage: Phaser.GameObjects.Image;
   hahacat: Phaser.GameObjects.Image;
   gokuu: Phaser.GameObjects.Image;
   good: Phaser.GameObjects.Image;
   biden: Phaser.GameObjects.Image;
-  happpiCat: Phaser.GameObjects.Image;
+  happpicat: Phaser.GameObjects.Image;
+  meta: Phaser.GameObjects.Image;
+  sans: Phaser.GameObjects.Image;
+  pap: Phaser.GameObjects.Image; 
+  thickphoto: Phaser.GameObjects.Image; 
+  swine: Phaser.GameObjects.Image;
+  bigGreen: Phaser.GameObjects.Image;
+  bald: Phaser.GameObjects.Image;
   scoreText: Phaser.GameObjects.Text;
   meowmeowmeowcatmeow: Phaser.GameObjects.Text;
   gameOverImage: Phaser.GameObjects.Image;
@@ -47,7 +62,14 @@ export class Game extends Scene {
     this.load.image('goku', 'assets/goku.jpg');
     this.load.image('good', 'assets/goodman.jpg');
     this.load.image('biden', 'assets/biden.jpg');
-    this.load.image('happpiCat', 'assets/happicat.jpg');
+    this.load.image('happpicat', 'assets/happicat.jpg');
+    this.load.image('meta', 'assets/met.jpg');
+    this.load.image('sans', 'assets/sans.jpg');
+    this.load.image('pap', 'assets/pap.png');
+    this.load.image('thickphoto', 'assets/thick.jpg');
+    this.load.image('swine', 'assets/pig.png');
+    this.load.image('bigGreen', 'assets/biggreen.jpg');
+    this.load.image('bald', 'assets/bald.jpg');
   }
 
   create() {
@@ -165,6 +187,20 @@ export class Game extends Scene {
     const sualtheme = this.sound.add('sualtheme'); // Add the audio to the scene
     const full = this.sound.add('full');
     const hapi = this.sound.add('hapi');
+    const metaa = this.sound.add('metaa')
+    const skell = this.sound.add('skell')
+    const pasta = this.sound.add('pasta')
+    const thinkMark = this.sound.add('thinkMark')
+    const baldao = this.sound.add('baldao')
+    const baldaao = this.sound.add('baldaao')
+    const baldaaao = this.sound.add('baldaaao')
+    const baldaaaao = this.sound.add('baldaaaao')
+    const baldaoe = this.sound.add('baldaoe')
+    const baldaaoe = this.sound.add('baldaaoe')
+    const baldaaaoe = this.sound.add('baldaaaoe')
+    const baldaaaaoe = this.sound.add('baldaaaaoe')
+    const pig = this.sound.add('pig')
+    const green = this.sound.add('green')
     this.explode = boooom;
     this.catBark = meowSound;
 
@@ -227,54 +263,134 @@ export class Game extends Scene {
     this.hahacat.setVisible(false);
     this.good = this.add.image(958, 460, 'good').setScale(2.6);
     this.good.setVisible(false);
+    this.bald = this.add.image(958, 460, 'bald').setScale(2.6);
+    this.bald.setVisible(false);
+    this.happpicat = this.add.image(958, 460, 'happpicat').setScale(2.6);
+    this.happpicat.setVisible(false);
 
+    this.meta = this.add.image(958, 460, 'meta').setScale(2);
+    this.meta.setVisible(false);
+    this.sans = this.add.image(958, 460, 'sans').setScale(1.7);
+    this.sans.setVisible(false);
+    this.pap = this.add.image(958, 460, 'pap').setScale(3);
+    this.pap.setVisible(false);
+    this.swine = this.add.image(958, 460, 'swine').setScale(2.6);
+    this.swine.setVisible(false);
+    this.bigGreen = this.add.image(958, 460, 'bigGreen').setScale(2.3);
+    this.bigGreen.setVisible(false);
+    this.thickphoto = this.add.image(958, 460, 'thickphoto').setScale(4);
+    this.thickphoto.setVisible(false);
+  
     // Add key press event
-    this.input.keyboard!.on('keydown-W', () => {
-      if (this.wall === 0) {
+    this.input.keyboard!.on('keydown-W', () => { //works
+      if (this.piggi === 0) {
         this.walterWhiteImage.setVisible(!this.walterWhiteImage.visible);
         theme.play();
         hecantkeep.play();
-        this.wall += 1;
+        this.piggi += 1;
       }
     });
-    this.input.keyboard!.on('keydown-G', () => {
-      if (this.gok === 0) {
+    this.input.keyboard!.on('keydown-G', () => { //works
+      if (this.piggi === 0) {
         this.gokuu.setVisible(!this.gokuu.visible);
         pro.play();
-        this.gok += 1;
+        this.piggi += 1;
       }
     });
-    this.input.keyboard!.on('keydown-C', () => {
-      if (this.catt === 0) {
-        this.hahacat.setVisible(!this.gokuu.visible);
+    this.input.keyboard!.on('keydown-C', () => { //works
+        this.hahacat.setVisible(!this.hahacat.visible);
+        if (this.catt === 0) {
         hah.play();
         this.catt += 1;
-      }
+        }else {
+        this.catt -= 1;
+        }
+        
     });
-    this.input.keyboard!.on('keydown-S', () => {
-      if (this.sauul === 0) {
+    this.input.keyboard!.on('keydown-S', () => { //works
+      if (this.piggi === 0) {
         this.good.setVisible(!this.good.visible);
         sualtheme.play();
-        this.sauul += 1;
+        this.piggi += 1;
       }
     });
 
-    this.input.keyboard!.on('keydown-B', () => {
-      if (this.bidenblastnumber === 0) {
+    this.input.keyboard!.on('keydown-B', () => { //brok
+      if (this.piggi === 0) {
         this.biden.setVisible(!this.biden.visible);
         full.play();
-        this.bidenblastnumber += 1;
+        this.piggi += 1;
       }
     });
 
-    this.input.keyboard!.on('keydown-H', () => {
-      if (this.wall === 0) {
-        this.happpiCat.setVisible(!this.happpiCat.visible);
+    this.input.keyboard!.on('keydown-H', () => { //brok
+      if (this.piggi === 0) {
+        this.happpicat.setVisible(!this.happpicat.visible);
         hapi.play();
-        this.holesum += 1;
+        this.piggi += 1;
+      }
+    });
+  
+    this.input.keyboard!.on('keydown-L', () => {  //work
+      if (this.piggi === 0) {
+        this.bigGreen.setVisible(!this.bigGreen.visible);
+        green.play();
+        this.piggi += 1;
+      }
+    });
+  
+    this.input.keyboard!.on('keydown-A', () => { //work
+      if (this.piggi === 0) {
+        this.swine.setVisible(!this.swine.visible);
+       pig.play();
+       this.piggi += 1;
+      }
+    });
+    this.input.keyboard!.on('keydown-U', () => { //work
+      if (this.piggi === 0) {
+        this.sans.setVisible(!this.sans.visible);
+       skell.play();
+       this.piggi += 1;
+      }
+    });
+    this.input.keyboard!.on('keydown-M', () => { //work
+      if (this.piggi === 0) {
+        this.meta.setVisible(!this.meta.visible);
+       metaa.play();
+       this.piggi += 1;
+      }
+    });
+    this.input.keyboard!.on('keydown-P', () => { //work
+      if (this.piggi === 0) {
+       this.pap.setVisible(!this.pap.visible);
+       pasta.play();
+       this.piggi += 1;
+      }
+    });
+
+    this.input.keyboard!.on('keydown-O', () => { //work
+      if (this.piggi === 0) {
+       this.thickphoto.setVisible(!this.thickphoto.visible);
+       thinkMark.play();
+       this.piggi += 1;
+      }
+    });
+    this.input.keyboard!.on('keydown-K', () => { //work
+      if (this.piggi === 0) {
+       this.bald.setVisible(!this.bald.visible);
+       baldao.play();
+       baldaao.play();
+       baldaaao.play();
+       baldaaaao.play();
+       baldaoe.play();
+       baldaaoe.play();
+       baldaaaoe.play();
+       baldaaaaoe.play();
+       this.piggi += 1;
       }
     });
   }
+
 
   computerTurn() {
     if (Math.random() < this.catNum) {

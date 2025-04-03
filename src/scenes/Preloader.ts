@@ -42,8 +42,22 @@ export class Preloader extends Scene
         this.load.audio('meowboomboommeowboomy', 'kaboomymeow.mp3'); // Preload the audio file
         this.load.audio('hecantkeep', 'getaway.mp3'); // Preload the audio file
         this.load.audio('sualtheme', 'sual.mp3'); // Preload the audio file
-        this.load.audio('full, fullpower.mp3');
-        this.load.audio('hapi, happi.mp3');
+        this.load.audio('full', 'fullpower.mp3');
+        this.load.audio('hapi', 'happi.mp3');
+        this.load.audio('metaa', 'mettheme.mp3');
+        this.load.audio('skell', 'sanstheme.mp3');
+        this.load.audio('pasta', 'paptheme.mp3');
+        this.load.audio('pig', 'pigtheme.mp3');
+        this.load.audio('green', 'biggreentheme.mp3');
+        this.load.audio('thinkMark', '500Years.mp3')
+        this.load.audio('baldao', 'balda1.mp3')
+        this.load.audio('baldaao', 'balda2.mp3')
+        this.load.audio('baldaaao', 'balda3.mp3')
+        this.load.audio('baldaaaao', 'balda4.mp3')
+        this.load.audio('baldaoe', 'wen.mp3')
+        this.load.audio('baldaaoe', 'mon.mp3')
+        this.load.audio('baldaaaoe', 'dem.mp3')
+        this.load.audio('baldaaaaoe', '64.mp3')
     }
 
     create ()
