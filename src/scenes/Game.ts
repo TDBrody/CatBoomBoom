@@ -25,7 +25,7 @@ export class Game extends Scene {
   gokuu: Phaser.GameObjects.Image;
   good: Phaser.GameObjects.Image;
   biden: Phaser.GameObjects.Image;
-  happpiCat: Phaser.GameObjects.Image;
+  happpicat: Phaser.GameObjects.Image;
   meta: Phaser.GameObjects.Image;
   sans: Phaser.GameObjects.Image;
   pap: Phaser.GameObjects.Image; 
@@ -62,7 +62,7 @@ export class Game extends Scene {
     this.load.image('goku', 'assets/goku.jpg');
     this.load.image('good', 'assets/goodman.jpg');
     this.load.image('biden', 'assets/biden.jpg');
-    this.load.image('happpiCat', 'assets/happicat.jpg');
+    this.load.image('happpicat', 'assets/happicat.jpg');
     this.load.image('meta', 'assets/met.jpg');
     this.load.image('sans', 'assets/sans.jpg');
     this.load.image('pap', 'assets/pap.png');
@@ -265,6 +265,8 @@ export class Game extends Scene {
     this.good.setVisible(false);
     this.bald = this.add.image(958, 460, 'bald').setScale(2.6);
     this.bald.setVisible(false);
+    this.happpicat = this.add.image(958, 460, 'happpicat').setScale(2.6);
+    this.happpicat.setVisible(false);
 
     this.meta = this.add.image(958, 460, 'meta').setScale(2);
     this.meta.setVisible(false);
@@ -323,7 +325,7 @@ export class Game extends Scene {
 
     this.input.keyboard!.on('keydown-H', () => { //brok
       if (this.piggi === 0) {
-        this.happpiCat.setVisible(!this.happpiCat.visible);
+        this.happpicat.setVisible(!this.happpicat.visible);
         hapi.play();
         this.piggi += 1;
       }
