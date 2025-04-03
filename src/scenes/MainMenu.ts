@@ -16,7 +16,7 @@ export class MainMenu extends Scene {
 
     create() {
         console.log('Creating scene...');
-        this.background = this.add.image(950, 520, 'chicken').setScale(1.06);
+        this.background = this.add.image(950, 520, 'waffle').setScale(1.06);
         this.add.text(80,345,"CLICK ME TO PLAY :)", {
             fontSize: '30px',
             color: '#ffffff', // White fill
@@ -31,7 +31,7 @@ export class MainMenu extends Scene {
             stroke: '#000000', // Black outline
             strokeThickness: 2 // Thickness of the outline
         })
-        this.add.text(80,940,"paincakes", {
+        this.add.text(80,940,"e", {
             fontSize: '10px',
             color: '#ffffff', // White fill
             fontStyle: 'bold', // Bold font
