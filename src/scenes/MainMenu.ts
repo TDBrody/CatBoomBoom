@@ -31,7 +31,7 @@ export class MainMenu extends Scene {
             stroke: '#000000', // Black outline
             strokeThickness: 2 // Thickness of the outline
         })
-        this.add.text(80,940,"e", {
+        this.add.text(80,940,"secret soundboard moment", {
             fontSize: '10px',
             color: '#ffffff', // White fill
             fontStyle: 'bold', // Bold font
